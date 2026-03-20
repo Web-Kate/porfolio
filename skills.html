@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills | Allyssa Kate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #fff8f6;
+      --card: rgba(255, 255, 255, 0.88);
+      --primary: #d85878;
+      --text: #31262e;
+      --muted: #665862;
+      --shadow: 0 18px 40px rgba(163, 92, 119, 0.16);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, #ffe4db 0, transparent 32%),
+        radial-gradient(circle at bottom left, #ffd7e7 0, transparent 36%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .hero {
+      width: min(1180px, calc(100% - 48px));
+      margin: 48px auto 20px;
+      text-align: center;
+    }
+
+    .hero span {
+      color: var(--primary);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      margin: 12px 0 16px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .skills-grid {
+      width: min(1180px, calc(100% - 48px));
+      margin: 34px auto 56px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .skill-card {
+      background: var(--card);
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .skill-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      justify-self: center;
+      animation: floatImage 3.8s ease-in-out infinite;
+      filter: drop-shadow(0 12px 18px rgba(216, 88, 120, 0.16));
+    }
+
+    .skill-card h2 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    @keyframes floatImage {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-14px);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .skill-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: white;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        border-radius: 18px;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Allyssa</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html" class="active">Skills</a>
+      <a href="experience.html">Experience</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <span>Core Skills</span>
+    <h1>Digital and Office Productivity Skills</h1>
+    <p>These tools reflect my practical strengths in documentation, presentations, data organization, and creative visual editing, helping me support daily tasks with accuracy, clarity, and professionalism.</p>
+  </section>
+
+  <section class="skills-grid">
+    <article class="skill-card">
+      <img src="excel.png" alt="Microsoft Excel">
+      <div>
+        <h2>Microsoft Excel</h2>
+        <p>Capable of organizing records, preparing tables, encoding information, and managing spreadsheets with attention to detail. I use Excel to keep data neat, accessible, and easy to review for reporting and office tasks.</p>
+      </div>
+    </article>
+
+    <article class="skill-card">
+      <img src="msword.png" alt="Microsoft Word">
+      <div>
+        <h2>Microsoft Word</h2>
+        <p>Experienced in creating clean documents, formatting reports, and preparing written materials for school and workplace needs. I focus on producing documents that are polished, readable, and professionally presented.</p>
+      </div>
+    </article>
+
+    <article class="skill-card">
+      <img src="ppt.png" alt="Microsoft PowerPoint">
+      <div>
+        <h2>Microsoft PowerPoint</h2>
+        <p>Comfortable building clear and engaging presentations that communicate ideas effectively. I pay attention to structure, visuals, and flow so that each presentation looks organized and easy to understand.</p>
+      </div>
+    </article>
+
+    <article class="skill-card">
+      <img src="PS.png" alt="Adobe Photoshop">
+      <div>
+        <h2>Adobe Photoshop</h2>
+        <p>Skilled in basic photo editing, layout improvement, and visual enhancement for creative and academic projects. I use Photoshop to produce simple yet attractive graphics with a balanced and professional look.</p>
+      </div>
+    </article>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

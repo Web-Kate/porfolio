@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Allyssa Kate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #fff7f9;
+      --panel: rgba(255, 255, 255, 0.84);
+      --primary: #dd5a84;
+      --text: #2f2430;
+      --muted: #6b5c67;
+      --shadow: 0 20px 40px rgba(182, 94, 130, 0.18);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #ffe0ea 0, transparent 34%),
+        radial-gradient(circle at bottom right, #ffd7c7 0, transparent 28%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .page {
+      width: min(1150px, calc(100% - 48px));
+      margin: 48px auto;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .profile-card,
+    .content-card {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card {
+      padding: 28px;
+      text-align: center;
+    }
+
+    .profile-card img {
+      width: min(100%, 360px);
+      height: auto;
+      object-fit: contain;
+      animation: floatImage 4s ease-in-out infinite;
+      filter: drop-shadow(0 16px 22px rgba(221, 90, 132, 0.18));
+    }
+
+    .profile-card h1 {
+      font-size: 2rem;
+      margin-top: 18px;
+      margin-bottom: 10px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .content-card {
+      padding: 42px;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .content-card h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 18px;
+    }
+
+    .content-card p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.95;
+      text-align: justify;
+    }
+
+    @keyframes floatImage {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-18px);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
+
+      .content-card,
+      .profile-card {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: white;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        border-radius: 18px;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Allyssa</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="experience.html">Experience</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section class="profile-card">
+      <img src="kate.png" alt="Allyssa Kate portrait">
+      <h1>Allyssa Kate</h1>
+      <p>Motivated and detail-oriented BSIT student with a strong interest in office productivity tools, support work, and continuous professional growth.</p>
+    </section>
+
+    <section class="content-card">
+      <div class="eyebrow">Personal Background</div>
+      <h2>About Me</h2>
+      <p>
+        I am currently taking up Bachelor of Science in Information Technology (BSIT) and I am 24 years old. I was born on September 30, 2001, and my birthplace is Zone 4 Agusan, Cagayan de Oro City. I am a Filipino citizen and currently single. As an aspiring IT professional, I am focused on building my technical knowledge, strengthening my work ethic, and preparing myself for opportunities where I can contribute with dedication, adaptability, and a positive attitude.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

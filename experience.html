@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience | Allyssa Kate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #fff7f8;
+      --panel: rgba(255, 255, 255, 0.9);
+      --primary: #d85b7c;
+      --text: #31242c;
+      --muted: #665861;
+      --shadow: 0 18px 40px rgba(160, 93, 116, 0.16);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #ffe2eb 0, transparent 30%),
+        radial-gradient(circle at bottom right, #ffe8d8 0, transparent 28%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .hero {
+      width: min(1120px, calc(100% - 48px));
+      margin: 48px auto 28px;
+      text-align: center;
+    }
+
+    .hero span {
+      color: var(--primary);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      margin: 12px 0 14px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .timeline {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto 56px;
+      display: grid;
+      gap: 28px;
+    }
+
+    .experience-card {
+      background: var(--panel);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .experience-card img {
+      width: 190px;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      justify-self: center;
+      animation: floatImage 4s ease-in-out infinite;
+      filter: drop-shadow(0 14px 20px rgba(216, 91, 124, 0.16));
+    }
+
+    .experience-card h2 {
+      font-size: 1.45rem;
+      margin-bottom: 6px;
+    }
+
+    .date {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .experience-card p {
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+
+    .role-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .role-list span {
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: #ffe5ed;
+      color: #b44667;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    @keyframes floatImage {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-16px);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .experience-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .role-list {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: white;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        border-radius: 18px;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Allyssa</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="experience.html" class="active">Experience</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <span>Work Experience</span>
+    <h1>Hands-On Experience in Office and Support Roles</h1>
+    <p>My experience reflects practical exposure to encoding, customer service, and day-to-day support tasks, allowing me to work with accuracy, responsibility, and professionalism in real workplace settings.</p>
+  </section>
+
+  <section class="timeline">
+    <article class="experience-card">
+      <img src="jentec.png" alt="JENTEC Cold Storage Inc.">
+      <div>
+        <h2>JENTEC COLD STORAGE INC.</h2>
+        <span class="date">February 05 - May 07, 2024</span>
+        <p>Worked in a data entry role responsible for encoding and organizing important information with accuracy and consistency. This experience strengthened my attention to detail, time management, and ability to handle repetitive tasks efficiently while maintaining the quality of records.</p>
+        <div class="role-list">
+          <span>Data Entry</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="experience-card">
+      <img src="med.png" alt="Med Pharma Pharmacy">
+      <div>
+        <h2>Med Pharma Pharmacy</h2>
+        <span class="date">February 12 - March 10, 2025</span>
+        <p>Served as a pharmacy assistant and cashier, helping with daily operations, customer concerns, and transaction handling. This role improved my communication skills, sense of responsibility, and ability to assist customers in a polite, organized, and efficient manner.</p>
+        <div class="role-list">
+          <span>Pharmacy Assistant</span>
+          <span>Cashier</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
